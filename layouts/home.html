@@ -1,36 +1,13 @@
 {{ define "main" }}
 
 <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 xl:gap-24">
-  <section>
-    <div class="bg-base-200">
-      <div class="bg-base-300 w-full px-4 pt-4 overflow-hidden">
-        <a href="{{ page.Params.paper.url }}" target="_blank">
-          {{ $img := resources.Get page.Params.paper.thumbnail }}
-          {{ $img := $img.Process "resize 600x png" }}
-          <img alt="{{ page.Params.paper.thumbnailAlt }}" src="{{ $img.RelPermalink }}" class="w-full shadow-lg">
-        </a>
-      </div>
-
-      <div class="p-6 lg:p-12">
-        <h2 class="text-primary text-5xl mb-6">{{ page.Params.paper.title }}</h2>
-        <p class="leading-relaxed ">
-          {{ page.Params.paper.description }}
-
-          <a class="text-3xl float-end ml-4 mt-2" href="{{ page.Params.paper.url }}" target="_blank">
-            {{ partial "icons/icon" (dict "vendor" "tabler/outline" "name" "download")}}
-          </a>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="flex flex-col justify-center">
+  <section class="flex flex-col justify-center md:col-start-2">
     <hgroup>
       <p class="pre-title mb-6">{{ page.Params.preTitle }}</p>
       <h1 class="text-primary text-5xl mb-6">{{ site.Title }}</h1>
     </hgroup>
 
-    <div class="lg:mb-12 mb-8 prose">
+    <div class="lg:mb-12 mb-8 prose text-base-content">
       {{ .Content }}
     </div>
 
@@ -52,16 +29,44 @@
 
         {{ $subscribeKey := "notifyMe" }}
         <input class="btn btn-primary join-item font-normal text-base px-12 uppercase" type="submit" submit
-          value="{{ T $subscribeKey }}" disabled />
+          value="{{ T $subscribeKey }}" disabled>
       </div>
 
-      <label class="label text-wrap">
-        <input type="checkbox" class="checkbox mr-1" checked disabled />
+      <label class="label text-wrap text-base-content prose">
+        <input type="checkbox" class="checkbox mr-1" id="gruppe_82859" name="gruppe_82859" value="gruppe_82859" checked
+          disabled>
         {{ page.Params.newsletter.alsoGetGeneralNewsletter }}
       </label>
     </form>
 
   </section>
+
+  <section class="md:col-start-1 md:row-start-1">
+    <div class="bg-base-200">
+      <div class="bg-base-300 w-full px-4 pt-4 overflow-hidden">
+        <a href="{{ page.Params.paper.url }}" target="_blank">
+          {{ $img := resources.Get page.Params.paper.thumbnail }}
+          {{ $img := $img.Process "resize 600x png" }}
+          <img alt="{{ page.Params.paper.thumbnailAlt }}" src="{{ $img.RelPermalink }}" class="w-full shadow-lg">
+        </a>
+      </div>
+
+      <div class="p-6 lg:p-12">
+        <h2 class="text-primary text-5xl mb-6">{{ page.Params.paper.title }}</h2>
+        <div class="flex flex-col md:flex-row">
+          <p class="leading-relaxed ">
+            {{ page.Params.paper.description }}
+          </p>
+          <a class="text-3xl float-end ml-2 mt-2 self-end" href="{{ page.Params.paper.url }}" target="_blank">
+            {{ partial "icons/icon" (dict "vendor" "tabler/outline" "name" "download")}}
+            <span class="sr-only">{{ T "download" }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
 </div>
 
 {{ end }}
