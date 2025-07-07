@@ -18,6 +18,6 @@ params:
     thumbnail: img/concept-note-thumbnail.png 
     thumbnailAlt: A screenshot of the first half page of our concept note
   newsletter: 
-    alsoGetGeneralNewsletter: I would also like to receive the epicenter.works newsletter. 
+    alsoGetGeneralNewsletter: Also subscribe to updates from [epicenter.works](https://epicenter.works/en/) 
 ---
 A new kind of digital infrastructure is taking shape — one that aims to make the opaque systems behind Europe's digital identity wallet visible, understandable, and accountable. We're working on a platform that will expose how personal data is requested, by whom, and for what reason — helping civil society, researchers, and individuals make sense of this rapidly expanding ecosystem. Something powerful is coming soon — and it’s designed to protect your rights.

@@ -35,7 +35,7 @@
       <label class="label text-wrap text-base-content prose">
         <input type="checkbox" class="checkbox mr-1" id="gruppe_82859" name="gruppe_82859" value="gruppe_82859" checked
           disabled>
-        {{ page.Params.newsletter.alsoGetGeneralNewsletter }}
+        <span>{{ page.Params.newsletter.alsoGetGeneralNewsletter | markdownify }}</span>
       </label>
     </form>
 
@@ -54,7 +54,7 @@
       <div class="p-6 lg:p-12">
         <h2 class="text-primary text-5xl mb-6">{{ page.Params.paper.title }}</h2>
         <div class="flex flex-col md:flex-row">
-          <p class="leading-relaxed ">
+          <p class="prose text-base-content">
             {{ page.Params.paper.description }}
           </p>
           <a class="text-3xl float-end ml-2 mt-2 self-end" href="{{ page.Params.paper.url }}" target="_blank">
