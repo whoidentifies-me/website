@@ -1,0 +1,67 @@
+{{ define "main" }}
+
+<div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 xl:gap-24">
+  <section>
+    <div class="bg-base-200">
+      <div class="bg-base-300 w-full px-4 pt-4 overflow-hidden">
+        <a href="{{ page.Params.paper.url }}" target="_blank">
+          {{ $img := resources.Get page.Params.paper.thumbnail }}
+          {{ $img := $img.Process "resize 600x png" }}
+          <img alt="{{ page.Params.paper.thumbnailAlt }}" src="{{ $img.RelPermalink }}" class="w-full shadow-lg">
+        </a>
+      </div>
+
+      <div class="p-6 lg:p-12">
+        <h2 class="text-primary text-5xl mb-6">{{ page.Params.paper.title }}</h2>
+        <p class="leading-relaxed ">
+          {{ page.Params.paper.description }}
+
+          <a class="text-3xl float-end ml-4 mt-2" href="{{ page.Params.paper.url }}" target="_blank">
+            {{ partial "icons/icon" (dict "vendor" "tabler/outline" "name" "download")}}
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="flex flex-col justify-center">
+    <hgroup>
+      <p class="pre-title mb-6">{{ page.Params.preTitle }}</p>
+      <h1 class="text-primary text-5xl mb-6">{{ site.Title }}</h1>
+    </hgroup>
+
+    <div class="lg:mb-12 mb-8 prose">
+      {{ .Content }}
+    </div>
+
+    <form method="POST">
+      <div class="join sm:join-horizontal join-vertical w-full mb-4">
+        {{ $emailPlaceholderKey := "emailAddress" }}
+        <input class="input input-bordered join-item flex-grow w-full md:max-w-72"
+          placeholder="{{ T $emailPlaceholderKey }}" type="email" name="feld_email" id="feld_email" required disabled />
+        <label class="label sr-only" for="feld_email">{{ T "emailAddress" }}</label>
+
+        <input hidden name="dmail_charset" value="UTF-8">
+        <input hidden name="gruppe_85778" value="gruppe_85778">
+
+        {{/* Spam protection recommended by Dialog-Mail */}}
+        <input name="last_name" type="text" value="" aria-disabled="true" tabindex="-1"
+          style="display: contents; width: 1px !important; max-width: 1px !important; height: 1px !important; max-height: 1px !important; line-height: 1px !important; padding: 0 !important; margin: 0 !important; background-color: transparent !important; border: 0 !important;" />
+
+        <input type="hidden" id="dm4551" name="feld_4551" value="{{ upper page.Site.Language.Lang }}">
+
+        {{ $subscribeKey := "notifyMe" }}
+        <input class="btn btn-primary join-item font-normal text-base px-12 uppercase" type="submit" submit
+          value="{{ T $subscribeKey }}" disabled />
+      </div>
+
+      <label class="label text-wrap">
+        <input type="checkbox" class="checkbox mr-1" checked disabled />
+        {{ page.Params.newsletter.alsoGetGeneralNewsletter }}
+      </label>
+    </form>
+
+  </section>
+</div>
+
+{{ end }}

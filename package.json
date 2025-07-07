@@ -1,0 +1,31 @@
+{
+  "name": "eidas-monitor-site",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/AKVorrat/eidas-monitor-site#readme",
+  "bugs": {
+    "url": "https://github.com/AKVorrat/eidas-monitor-site/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AKVorrat/eidas-monitor-site.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "@tailwindcss/typography": "^0.5.16",
+    "daisyui": "^5.0.46",
+    "tailwindcss": "^4.1.11"
+  },
+  "dependencies": {
+    "@fontsource-variable/manrope": "^5.2.6",
+    "@fontsource/anton": "^5.2.6",
+    "@fontsource/poppins": "^5.2.6"
+  }
+}
