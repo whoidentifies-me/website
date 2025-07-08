@@ -2,6 +2,9 @@ baseURL = 'https://eidasmonitor.eu/'
 languageCode = 'en-US'
 title = 'eIDAS Monitor'
 
+[params] 
+  newsletterURL = "https://secure.dialog-mail.com/s/6U6yH"
+
 [params.footer]
   owner = "epicenter.works"
   ownerURL = "https://epicenter.works/en/"

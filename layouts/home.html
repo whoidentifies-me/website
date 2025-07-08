@@ -11,15 +11,19 @@
       {{ .Content }}
     </div>
 
-    <form method="POST">
+    <p class="pb-3 prose text-base-content">
+      {{ page.Params.newsletter.callToAction | markdownify }}
+    </p>
+
+    <form method="POST" action="{{ site.Params.newsletterURL }}" target="_blank">
       <div class="join sm:join-horizontal join-vertical w-full mb-4">
         {{ $emailPlaceholderKey := "emailAddress" }}
         <input class="input input-bordered join-item flex-grow w-full md:max-w-72"
-          placeholder="{{ T $emailPlaceholderKey }}" type="email" name="feld_email" id="feld_email" required disabled />
+          placeholder="{{ T $emailPlaceholderKey }}" type="email" name="feld_email" id="feld_email" required />
         <label class="label sr-only" for="feld_email">{{ T "emailAddress" }}</label>
 
         <input hidden name="dmail_charset" value="UTF-8">
-        <input hidden name="gruppe_85778" value="gruppe_85778">
+        <input hidden name="gruppe_82859" value="gruppe_82859">
 
         {{/* Spam protection recommended by Dialog-Mail */}}
         <input name="last_name" type="text" value="" aria-disabled="true" tabindex="-1"
@@ -29,14 +33,8 @@
 
         {{ $subscribeKey := "notifyMe" }}
         <input class="btn btn-primary join-item font-normal text-base px-12 uppercase" type="submit" submit
-          value="{{ T $subscribeKey }}" disabled>
+          value="{{ T $subscribeKey }}">
       </div>
-
-      <label class="label text-wrap text-base-content prose">
-        <input type="checkbox" class="checkbox mr-1" id="gruppe_82859" name="gruppe_82859" value="gruppe_82859" checked
-          disabled>
-        <span>{{ page.Params.newsletter.alsoGetGeneralNewsletter | markdownify }}</span>
-      </label>
     </form>
 
   </section>
