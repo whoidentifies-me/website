@@ -39,9 +39,9 @@ h6,
   --radius-selector: 0.25rem;
 }
 
-.pre-title {
-  font-family: 'Poppins' sans-serif;
-  font-weight: 600;
+.sub-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
   letter-spacing: 22.5%;
   display: flex;
   gap: 1rem;
@@ -50,7 +50,7 @@ h6,
   color: #333333;
 }
 
-.pre-title::before {
+.sub-title::before {
   content: '';
   height: 1px;
   width: 3rem;

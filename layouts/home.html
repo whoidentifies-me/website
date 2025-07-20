@@ -1,24 +1,26 @@
 {{ define "main" }}
 
-<div class="w-full grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 xl:gap-24">
-  <section class="flex flex-col justify-center md:col-start-2">
-    <hgroup>
-      <p class="pre-title mb-6">{{ page.Params.preTitle }}</p>
-      <h1 class="text-primary text-5xl mb-6">{{ site.Title }}</h1>
+<div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 xl:gap-24 justify-items-center my-8 lg:my-0">
+  <section class="flex flex-col justify-center lg:items-start lg:col-start-1 max-w-[65ch]">
+    <hgroup class="mb-3">
+      <h1 class="text-primary text-5xl mb-3">{{ site.Title }}</h1>
+      <p class="sub-title mb-6">{{ page.Params.preTitle }}</p>
     </hgroup>
 
-    <div class="lg:mb-8 mb-6 prose text-base-content">
+    <div class="lg:mb-10 mb-8 prose text-base-content">
       {{ .Content }}
     </div>
+
+    <h2 class="text-primary text-4xl mb-3 ">{{ page.Params.newsletter.callToActionTitle }}</h2>
 
     <p class="pb-3 prose text-base-content">
       {{ page.Params.newsletter.callToAction | markdownify }}
     </p>
 
-    <form method="POST" action="{{ site.Params.newsletterURL }}" target="_blank">
-      <div class="join sm:join-horizontal join-vertical w-full mb-4">
+    <form class="w-full prose" method="POST" action="{{ site.Params.newsletterURL }}" target="_blank">
+      <div class="join sm:join-horizontal join-vertical w-full mb-4" >
         {{ $emailPlaceholderKey := "emailAddress" }}
-        <input class="input input-bordered join-item flex-grow w-full md:max-w-72"
+        <input class="input input-bordered join-item flex-grow w-full w-72 md:max-w-72"
           placeholder="{{ T $emailPlaceholderKey }}" type="email" name="feld_email" id="feld_email" required />
         <label class="label sr-only" for="feld_email">{{ T "emailAddress" }}</label>
 
@@ -31,7 +33,7 @@
 
         <input type="hidden" id="dm4551" name="feld_4551" value="{{ upper page.Site.Language.Lang }}">
 
-        {{ $subscribeKey := "notifyMe" }}
+        {{ $subscribeKey := "subscribe" }}
         <input class="btn btn-primary join-item font-normal text-base px-12 uppercase" type="submit" submit
           value="{{ T $subscribeKey }}">
       </div>
@@ -39,7 +41,7 @@
 
   </section>
 
-  <section class="md:col-start-1 md:row-start-1">
+  <section class="lg:col-start-2 lg:row-start-1 flex justify-center items-center">
     <div class="bg-base-200">
       <div class="bg-base-300 w-full px-4 pt-4 overflow-hidden">
         <a href="{{ page.Params.paper.url }}" target="_blank">
@@ -50,20 +52,15 @@
       </div>
 
       <div class="p-6 lg:p-12">
-        <h2 class="text-primary text-5xl mb-6">{{ page.Params.paper.title }}</h2>
-        <div class="flex flex-col md:flex-row">
-          <p class="prose text-base-content">
-            {{ page.Params.paper.description }}
-          </p>
-          <a class="text-3xl float-end ml-2 mt-2 self-end" href="{{ page.Params.paper.url }}" target="_blank">
-            {{ partial "icons/icon" (dict "vendor" "tabler/outline" "name" "download")}}
-            <span class="sr-only">{{ T "download" }}</span>
+        <h2 class="text-primary text-4xl">
+          <a href="{{ page.Params.paper.url }}" target="_blank" class="flex justify-between items-center">
+            <span>{{ page.Params.paper.title }}</span>
+            <span>{{ partial "icons/icon" (dict "vendor" "tabler/outline" "name" "download")}}</span>
           </a>
-        </div>
+        </h2>
       </div>
     </div>
   </section>
-
 
 </div>
 
