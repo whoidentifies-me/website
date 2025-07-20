@@ -1,8 +1,8 @@
 ---
 title: 'Home'
 description: |
-  A new kind of digital infrastructure is taking shape — one that aims to make the opaque systems
-  behind Europe’s digital identity wallet visible, understandable, and accountable. 
+  We are building a platform that empowers everyone to have realtime oversight about every company and public 
+  sector agency that uses the European Digital Identity Wallet.
 date: 2023-01-01T08:00:00-07:00
 draft: false
 params:
