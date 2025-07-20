@@ -1,6 +1,6 @@
 baseURL = 'https://eidasmonitor.eu/'
 languageCode = 'en-US'
-title = 'eIDAS Monitor'
+title = 'eIDAS Oversight Monitor'
 
 [params] 
   newsletterURL = "https://secure.dialog-mail.com/s/6U6yH"

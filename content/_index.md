@@ -6,7 +6,7 @@ description: |
 date: 2023-01-01T08:00:00-07:00
 draft: false
 params:
-  preTitle: Stay tuned
+  preTitle: Coming soon
   paper:
     title: Concept Note 
     description: |
@@ -20,4 +20,4 @@ params:
   newsletter: 
     callToAction: Subscribe to Updates from [epicenter.works](https://epicenter.works/en/)
 ---
-A new kind of digital infrastructure is taking shape — one that aims to make the opaque systems behind Europe's digital identity wallet visible, understandable, and accountable. We're working on a platform that will expose how personal data is requested, by whom, and for what reason — helping civil society, researchers, and individuals make sense of this rapidly expanding ecosystem. Something powerful is coming soon — and it’s designed to protect your rights.
+Here we are building a platform that empowers everyone to have realtime oversight about every company and public sector agency that uses the European Digital Identity Wallet. We strongly believe that trust needs to be earned and that only transparency makes this possible. This platform will provide an easy accessible way to search for every use case that is implemented with the EUDI Wallet, which information users are asked for and by whom. Watchdogs and interested users will be able to get alerts about developments in the EU-wide ecosystem tailored to their interests. The project is scheduled to go live by end of 2025 with a pilot and become fully available by late 2026. Subscribe to our newsletter and always stay informed about what we do. 
