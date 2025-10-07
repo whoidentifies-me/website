@@ -2,10 +2,15 @@
 
 <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 xl:gap-24 justify-items-center my-8 lg:my-0">
   <section class="flex flex-col justify-center lg:items-start lg:col-start-1 max-w-[65ch]">
-    <hgroup class="mb-3">
-      <h1 class="text-primary text-5xl mb-3">{{ site.Title }}</h1>
-      <p class="sub-title mb-6">{{ page.Params.preTitle }}</p>
-    </hgroup>
+    <div class="flex flex-row justify-start items-center gap-8 mb-5">
+      {{ $logo := resources.Get "img/logo-primary.png" }}
+      {{ $logo := $logo.Process "resize x256 png" }}
+      <img src="{{ $logo.RelPermalink }}" alt="Logo {{ site.Title }}" class="h-25 w-auto">
+      <hgroup class="flex-grow-1">
+        <h1 class="text-primary text-5xl mb-3">{{ site.Title }}</h1>
+        <p class="sub-title">{{ page.Params.preTitle }}</p>
+      </hgroup>
+    </div>
 
     <div class="lg:mb-10 mb-8 prose text-base-content">
       {{ .Content }}
@@ -18,7 +23,7 @@
     </p>
 
     <form class="w-full prose" method="POST" action="{{ site.Params.newsletterURL }}" target="_blank">
-      <div class="join sm:join-horizontal join-vertical w-full mb-4" >
+      <div class="join sm:join-horizontal join-vertical w-full mb-4">
         {{ $emailPlaceholderKey := "emailAddress" }}
         <input class="input input-bordered join-item flex-grow w-full w-72 md:max-w-72"
           placeholder="{{ T $emailPlaceholderKey }}" type="email" name="feld_email" id="feld_email" required />
@@ -47,7 +52,7 @@
         <a href="{{ page.Params.paper.url }}" target="_blank">
           {{ $img := resources.Get page.Params.paper.thumbnail }}
           {{ $img := $img.Process "resize 600x png" }}
-          <img alt="{{ page.Params.paper.thumbnailAlt }}" src="{{ $img.RelPermalink }}" class="w-full shadow-lg">
+          <img alt="{{ page.Params.paper.thumbnailAlt }}" src="{{ $img.RelPermalink }}" class="w-full shadow-lg grayscale">
         </a>
       </div>
 

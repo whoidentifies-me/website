@@ -1,4 +1,4 @@
-module eidasmonitor.eu
+module whoidentifies.me
 
 go 1.24.4
 

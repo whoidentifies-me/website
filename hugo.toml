@@ -1,6 +1,6 @@
-baseURL = 'https://eidasmonitor.eu/'
+baseURL = 'https://whoidentifies.me/'
 languageCode = 'en-US'
-title = 'eIDAS Oversight Monitor'
+title = 'whoidentifies.me'
 
 [params] 
   newsletterURL = "https://secure.dialog-mail.com/s/6U6yH"
