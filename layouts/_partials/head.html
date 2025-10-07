@@ -4,6 +4,7 @@
 {{ if .Description }}
 <meta name="description" content="{{ .Description }}">
 {{ end }}
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
 {{ with (templates.Defer (dict "key" "global")) }}
 {{ partial "head/css.html" . }}
