@@ -2,7 +2,7 @@
 
 <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 xl:gap-24 justify-items-center my-8 lg:my-0">
   <section class="flex flex-col justify-center lg:items-start lg:col-start-1 max-w-[65ch]">
-    <div class="flex flex-row justify-start items-center gap-8 mb-5">
+    <div class="flex sm:flex-row flex-col justify-start items-center gap-4 sm:gap-8 mb-5">
       {{ $logo := resources.Get "img/logo-primary.png" }}
       {{ $logo := $logo.Process "resize x256 png" }}
       <img src="{{ $logo.RelPermalink }}" alt="Logo {{ site.Title }}" class="h-25 w-auto">
@@ -52,7 +52,8 @@
         <a href="{{ page.Params.paper.url }}" target="_blank">
           {{ $img := resources.Get page.Params.paper.thumbnail }}
           {{ $img := $img.Process "resize 600x png" }}
-          <img alt="{{ page.Params.paper.thumbnailAlt }}" src="{{ $img.RelPermalink }}" class="w-full shadow-lg grayscale">
+          <img alt="{{ page.Params.paper.thumbnailAlt }}" src="{{ $img.RelPermalink }}"
+            class="w-full shadow-lg grayscale">
         </a>
       </div>
 
