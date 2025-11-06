@@ -5,6 +5,7 @@
 @source "hugo_stats.json";
 
 @import "fonts.css";
+@import "lite-yt-embed.css";
 
 body {
   font-family: 'Manrope Variable', sans-serif;

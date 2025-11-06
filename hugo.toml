@@ -46,6 +46,10 @@ title = 'whoidentifies.me'
     target = 'static/fonts'
     includeFiles = '*-latin-*'
   [[module.mounts]]
+    source = "node_modules/lite-youtube-embed/src/"
+    target = "assets/css/"
+    includeFiles = "lite-yt-embed.css"
+  [[module.mounts]]
     disableWatch = true
     source = 'hugo_stats.json'
     target = 'assets/notwatching/hugo_stats.json'

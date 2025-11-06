@@ -7,10 +7,13 @@ date: 2023-01-01T08:00:00-07:00
 draft: false
 params:
   preTitle: Coming soon
+  video:
+    id: VsSBcuvXkU8
+    title: "Deep Dive: CTRL+ALT+DEFEND: Protecting the Users' Sovereignty with Thomas Lohninger and Mirko Mollik"
   paper:
-    title: Read the full Concept 
-    url: https://epicenter.works/en/content/eidas-monitor-concept-note 
-    thumbnail: img/concept-note-thumbnail.png 
+    title: Read the full Concept
+    url: https://epicenter.works/en/content/eidas-monitor-concept-note
+    thumbnail: img/concept-note-thumbnail.png
     thumbnailAlt: A screenshot of the first half page of our concept note
   newsletter: 
     callToActionTitle: Stay tuned

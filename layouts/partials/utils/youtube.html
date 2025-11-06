@@ -1,0 +1,23 @@
+<!--
+{{/*
+    Usage:
+    {{ partial "utils/youtube" (dict "id" "<video-id-here>" "title" "<video title here>" "start" 102) }}
+*/}}
+-->
+
+{{ $thumbnailFile := printf "/img/yt-thumbnails/%s.jpg" .id }}
+
+<lite-youtube
+    videoid="{{ .id }}"
+    {{ if (resources.GetMatch $thumbnailFile) }}
+        {{ $thumbnailUrl := ((resources.GetMatch $thumbnailFile).Fill `1200x675 jpg Smart q50`).RelPermalink | safeURL }}
+        style="{{ printf "background-image: url(%s);" $thumbnailUrl | safeCSS }} "
+    {{ end }}
+    {{ if .title }}
+        title="{{ .title }}"
+    {{ end }}
+    {{ if .start }}
+        params="start={{ .start }}"
+    {{ end }}
+    >
+</lite-youtube>

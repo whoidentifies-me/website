@@ -46,19 +46,30 @@
 
   </section>
 
-  <section class="lg:col-start-2 lg:row-start-1 flex justify-center items-center">
-    <div class="bg-base-200">
+  <section class="lg:col-start-2 lg:row-start-1 flex flex-col justify-center items-center gap-8">
+    <!-- YouTube Video Section -->
+    <div class="w-full max-w-lg">
+      {{ partial "utils/youtube" (dict "id" page.Params.video.id "title" page.Params.video.title "start" 102) }}
+      <p class="text-center mt-2">
+        <a href="https://youtube.com/watch?v={{ page.Params.video.id }}&t=102" target="_blank" rel="noreferrer" class="link link-primary text-sm">
+          Watch on YouTube
+        </a>
+      </p>
+    </div>
+
+    <!-- Document Section -->
+    <div class="bg-base-200 max-w-lg">
       <div class="bg-base-300 w-full px-4 pt-4 overflow-hidden">
         <a href="{{ page.Params.paper.url }}" target="_blank">
           {{ $img := resources.Get page.Params.paper.thumbnail }}
-          {{ $img := $img.Process "resize 600x png" }}
+          {{ $img := $img.Process "fill 600x240 top" }}
           <img alt="{{ page.Params.paper.thumbnailAlt }}" src="{{ $img.RelPermalink }}"
             class="w-full shadow-lg grayscale">
         </a>
       </div>
 
-      <div class="p-6 lg:p-12">
-        <h2 class="text-primary text-4xl">
+      <div class="p-6 lg:p-8">
+        <h2 class="text-primary text-3xl">
           <a href="{{ page.Params.paper.url }}" target="_blank" class="flex justify-between items-center">
             <span>{{ page.Params.paper.title }}</span>
             <span>{{ partial "icons/icon" (dict "vendor" "tabler/outline" "name" "download")}}</span>
