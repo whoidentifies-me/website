@@ -19,4 +19,5 @@ params:
     callToActionTitle: Stay tuned
     callToAction: Subscribe to Updates from [epicenter.works](https://epicenter.works/en/)
 ---
-This platform will provide an easy accessible way to search for every use case that is implemented with the eIDAS Wallet. For example, which information users are asked for, by whom and for which purpose. Watchdogs and interested users will be able to get alerts about developments in the EU-wide ecosystem tailored to their interests. The project is scheduled to go live by end of 2025 with a prototype and become fully available by the end of 2026. 
+This platform will provide an easy accessible way to search for every use case that is implemented with the eIDAS Wallet. For example, which information users are asked for, by whom and for which purpose. Watchdogs and interested users will be able to get alerts about developments in the EU-wide ecosystem tailored to their interests. 
+A demo with synthetic data is already available for you to explore while we work toward integrating real-world data.
