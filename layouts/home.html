@@ -16,6 +16,14 @@
       {{ .Content }}
     </div>
 
+    <div class="flex flex-row justify-center w-full mb-14">
+      <a href="https://demo.whoidentifies.me" target="_blank"
+        class="btn btn-primary btn-lg font-normal text-base px-12 uppercase">
+        Try Now
+      </a>
+
+    </div>
+
     <h2 class="text-primary text-4xl mb-3 ">{{ page.Params.newsletter.callToActionTitle }}</h2>
 
     <p class="pb-3 prose text-base-content">
@@ -51,7 +59,8 @@
     <div class="w-full max-w-lg">
       {{ partial "utils/youtube" (dict "id" page.Params.video.id "title" page.Params.video.title "start" 102) }}
       <p class="text-center mt-2">
-        <a href="https://youtube.com/watch?v={{ page.Params.video.id }}&t=102" target="_blank" rel="noreferrer" class="link link-primary text-sm">
+        <a href="https://youtube.com/watch?v={{ page.Params.video.id }}&t=102" target="_blank" rel="noreferrer"
+          class="link link-primary text-sm">
           Watch on YouTube
         </a>
       </p>
